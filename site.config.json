@@ -1,0 +1,10 @@
+{
+  "fullName": "Your Name",
+  "intro": "1–3 sentences about your background, interests, and what you're looking for.",
+  "avatarPath": "assets/avatar.svg",
+  "resumePath": "assets/resume.pdf",
+  "paperPath": "assets/paper.pdf",
+  "githubUrl": "https://github.com/your-username",
+  "linkedinUrl": "https://www.linkedin.com/in/your-username/",
+  "accentColor": "#4f46e5"
+}
