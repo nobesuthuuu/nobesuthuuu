@@ -1,0 +1,141 @@
+:root {
+  --accent: #4f46e5;
+  --bg: #f8fafc;
+  --text: #0f172a;
+  --muted: #475569;
+  --card: #ffffff;
+  --ring: color-mix(in oklab, var(--accent), white 75%);
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html, body {
+  height: 100%;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, Segoe UI, Roboto, Helvetica, Arial, "Apple Color Emoji", "Segoe UI Emoji";
+  color: var(--text);
+  background: var(--bg);
+  line-height: 1.6;
+}
+
+.container {
+  min-height: 100dvh;
+  display: grid;
+  place-items: center;
+  padding: 24px;
+}
+
+.card {
+  width: 100%;
+  max-width: 880px;
+  background: var(--card);
+  border-radius: 16px;
+  border: 1px solid #e5e7eb;
+  box-shadow: 0 10px 30px rgba(2, 6, 23, 0.06);
+  padding: 28px;
+}
+
+.profile {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  grid-template-rows: auto auto;
+  grid-template-areas:
+    "avatar text"
+    "links links";
+  gap: 20px 28px;
+  align-items: center;
+}
+
+.avatar {
+  grid-area: avatar;
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  border: 3px solid var(--ring);
+  object-fit: cover;
+  background: #eef2ff;
+}
+
+.text {
+  grid-area: text;
+}
+
+h1 {
+  font-size: 28px;
+  line-height: 1.2;
+  margin: 0 0 8px 0;
+}
+
+#intro {
+  margin: 0;
+  color: var(--muted);
+}
+
+.links {
+  grid-area: links;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 12px;
+  margin-top: 8px;
+}
+
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 8px;
+  padding: 10px 14px;
+  border-radius: 999px;
+  font-weight: 600;
+  text-decoration: none;
+  color: white;
+  background: var(--accent);
+  border: 1px solid color-mix(in oklab, var(--accent), black 10%);
+  box-shadow: 0 1px 1px rgba(2, 6, 23, 0.06);
+  transition: transform 0.06s ease, box-shadow 0.2s ease, background 0.2s ease;
+}
+
+.btn:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 8px 20px rgba(2, 6, 23, 0.14);
+}
+
+.btn:focus-visible {
+  outline: 3px solid var(--ring);
+  outline-offset: 2px;
+}
+
+.btn.outline {
+  background: transparent;
+  color: var(--text);
+  border-color: #cbd5e1;
+}
+
+.btn.outline:hover {
+  background: #f1f5f9;
+}
+
+@media (max-width: 640px) {
+  .profile {
+    grid-template-columns: 1fr;
+    grid-template-areas:
+      "avatar"
+      "text"
+      "links";
+    text-align: center;
+  }
+
+  .avatar {
+    margin: 0 auto;
+    width: 104px;
+    height: 104px;
+  }
+
+  .links {
+    justify-content: center;
+  }
+}
